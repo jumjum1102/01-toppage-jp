@@ -220,8 +220,8 @@ h1.hero-t em{font-style:italic;color:#c9a84c;}
 .br-ttl em{font-style:italic;color:#c9a84c;}
 .br-note{font-size:12px;color:rgba(240,237,232,.28);line-height:1.8;max-width:260px;text-align:right;}
 
-/* Active 3 cards */
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;}
+/* Active guide cards */
+.cards3{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:2px;}
 
 .card{
   position:relative;overflow:hidden;
@@ -273,6 +273,16 @@ h1.hero-t em{font-style:italic;color:#c9a84c;}
 .card:hover .card-cta{gap:18px;border-color:#c9a84c;}
 .cta-line{width:18px;height:1px;background:#c9a84c;position:relative;transition:width .3s;}
 .card:hover .cta-line{width:28px;}
+.card-edu img{filter:brightness(.34) saturate(.55) hue-rotate(14deg);}
+.card-edu:hover img{filter:brightness(.25) saturate(.38) hue-rotate(14deg);}
+.card-edu .card-tag{color:rgba(149,177,255,.82);}
+.card-edu .card-tag::before{background:rgba(149,177,255,.55);}
+.card-edu .card-num{color:rgba(149,177,255,.13);}
+.card-edu:hover .card-num{color:rgba(149,177,255,.28);}
+.card-edu .card-cta{color:#95B1FF;border-bottom-color:rgba(149,177,255,.32);}
+.card-edu:hover .card-cta{border-color:#95B1FF;}
+.card-edu .cta-line{background:#95B1FF;}
+.card-edu .cta-line::after{border-top-color:#95B1FF;border-right-color:#95B1FF;}
 .cta-line::after{
   content:'';position:absolute;right:0;top:-2px;
   width:5px;height:5px;
@@ -386,7 +396,7 @@ h1.hero-t em{font-style:italic;color:#c9a84c;}
 /* ══════ RESPONSIVE ══════ */
 @media(max-width:1000px){
   .cards3{grid-template-columns:1fr 1fr;}
-  .cards4{grid-template-columns:repeat(4,1fr);}
+  .cards4{grid-template-columns:repeat(3,1fr);}
   .about-in{grid-template-columns:1fr;gap:48px;}
   .about-img{height:360px;}
   #gallery{grid-template-columns:1fr 1fr;height:auto;}
@@ -407,7 +417,7 @@ h1.hero-t em{font-style:italic;color:#c9a84c;}
   .br-note{text-align:left;max-width:100%;}
   .cards3{grid-template-columns:1fr;}
   .card{aspect-ratio:3/2;}
-  .cards4{grid-template-columns:1fr 1fr;}
+  .cards4{grid-template-columns:1fr;}
   .card-cs{aspect-ratio:3/2;}
   #about{padding:72px 20px;}
   .about-img{height:260px;}
@@ -481,11 +491,11 @@ body::after{
     <span class="fp-arr">↗</span>
   </div>
 
-  <div class="fp-item disabled">
-    <div class="fp-dot" style="background:#444;"></div>
+  <div class="fp-item" onclick="goPage('https://jumjum1102.github.io/Singapore_Education/')">
+    <div class="fp-dot" style="background:#8A6BBE;"></div>
     <span class="fp-n">04</span>
-    <span class="fp-name">不動産・住宅事情</span>
-    <span class="fp-badge">準備中</span>
+    <span class="fp-name">教育制度</span>
+    <span class="fp-arr">↗</span>
   </div>
 
   <div class="fp-item disabled">
@@ -593,14 +603,26 @@ body::after{
       </div>
     </div>
 
-  </div>
+    <div class="card card-edu fade d3" onclick="goPage('https://jumjum1102.github.io/Singapore_Education/')">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Education">
+      <div class="card-ov"></div>
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tag">Education</div>
+        <h3 class="card-title">教育制度<br>ガイド</h3>
+        <p class="card-desc">PSLE・ストリーミング・大学進学まで。シンガポール教育の構造と競争力を体系的に読み解く。</p>
+        <div class="card-cta">Read Guide<div class="cta-line"></div></div>
+      </div>
+    </div>
+
+  </div></div>
 
   <div class="cards4">
 
     <div class="card-cs fade d1">
       <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=60" alt="Real Estate">
       <div class="card-cs-ov"></div>
-      <div class="cs-num">04</div>
+      <div class="cs-num">05</div>
       <div class="cs-body">
         <div class="cs-tag">Real Estate</div>
         <div class="cs-title">不動産・住宅事情</div>
@@ -609,17 +631,6 @@ body::after{
     </div>
 
     <div class="card-cs fade d2">
-      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=60" alt="Education">
-      <div class="card-cs-ov"></div>
-      <div class="cs-num">05</div>
-      <div class="cs-body">
-        <div class="cs-tag">Education</div>
-        <div class="cs-title">教育制度</div>
-      </div>
-      <div class="cs-badge">Coming Soon</div>
-    </div>
-
-    <div class="card-cs fade d3">
       <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=60" alt="Business">
       <div class="card-cs-ov"></div>
       <div class="cs-num">06</div>
@@ -630,7 +641,7 @@ body::after{
       <div class="cs-badge">Coming Soon</div>
     </div>
 
-    <div class="card-cs fade d4">
+    <div class="card-cs fade d3">
       <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=60" alt="Cost of Living">
       <div class="card-cs-ov"></div>
       <div class="cs-num">07</div>
@@ -641,7 +652,7 @@ body::after{
       <div class="cs-badge">Coming Soon</div>
     </div>
 
-  </div>
+  </div></div>
 </section>
 
 <section id="about">
@@ -657,8 +668,8 @@ body::after{
       <p class="about-p">公的医療保険の仕組みから、UNESCO認定のホーカー文化、世界No.1の空港——それぞれのテーマを研究者の視点で体系化しています。</p>
       <div class="about-hr"></div>
       <div class="about-stats">
-        <div><div class="ast-v">3</div><div class="ast-l">公開済みガイド</div></div>
-        <div><div class="ast-v">7+</div><div class="ast-l">予定コンテンツ</div></div>
+        <div><div class="ast-v">4</div><div class="ast-l">公開済みガイド</div></div>
+        <div><div class="ast-v">6+</div><div class="ast-l">予定コンテンツ</div></div>
         <div><div class="ast-v">2025</div><div class="ast-l">最新データ対応</div></div>
       </div>
     </div>
@@ -695,8 +706,8 @@ body::after{
       <a class="ft-lnk" href="https://jumjum1102.github.io/comparison-jp-sg-nationalhealth/">01 — 公的医療保険制度</a>
       <a class="ft-lnk" href="https://jumjum1102.github.io/Hawker-hisrory/">02 — ホーカー食文化</a>
       <a class="ft-lnk" href="https://jumjum1102.github.io/transportation-singapore/">03 — 交通・空港</a>
-      <a class="ft-lnk dim">04 — 不動産・住宅事情</a>
-      <a class="ft-lnk dim">05 — 教育制度</a>
+      <a class="ft-lnk" href="https://jumjum1102.github.io/Singapore_Education/">04 — 教育制度</a>
+      <a class="ft-lnk dim">05 — 不動産・住宅事情</a>
       <a class="ft-lnk dim">06 — ビジネス環境</a>
       <a class="ft-lnk dim">07 — 生活コスト</a>
     </div>
@@ -717,7 +728,8 @@ body::after{
 const PAGE_LINKS = {
   healthcare: "https://jumjum1102.github.io/comparison-jp-sg-nationalhealth/",
   hawker: "https://jumjum1102.github.io/Hawker-hisrory/",
-  transport: "https://jumjum1102.github.io/transportation-singapore/"
+  transport: "https://jumjum1102.github.io/transportation-singapore/",
+  education: "https://jumjum1102.github.io/Singapore_Education/"
 };
 
 /* Custom cursor */
